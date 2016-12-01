@@ -8,6 +8,7 @@ class Results extends Component {
     this.state = {
       playbackRateCorr: 0,
       pauseCorr: 0,
+      numberOfQuizTakers: 0
     }
 
   }
@@ -53,6 +54,8 @@ class Results extends Component {
 
         that.setState({playbackRateCorr: Stats.sampleCorrelation(scores, playbackRates)})
         that.setState({pauseCorr: Stats.sampleCorrelation(scores, pauseCounts)})
+
+        this.setState({numberOfQuizTakers:  Object.keys(data).length)
       });
     })         
   }
@@ -103,6 +106,7 @@ class Results extends Component {
   multiUserStats() {
     return <div className='row'>
       <h2>Stats accross all quiz takers</h2>
+      <p> Number of times quiz was taken: {this.state.numberOfQuizTakers}</p>
       <p>Correlation between video playback rate and quiz score: {this.state.playbackRateCorr.toFixed(2)}</p>
       <p>Correlation between number of pauses and quiz score: {this.state.pauseCorr.toFixed(2)}</p>
     </div>
@@ -114,12 +118,8 @@ class Results extends Component {
       <h2> Quiz stats</h2>
       <h4>{this.percentCorrect(stats)*100}% of the questions were answered correctly</h4>
       {this.table(stats)}
-      {this.videoStats(videoStats)}
-      
-      
+      {this.videoStats(videoStats)}      
       {this.multiUserStats()}
-
-      
     </div>
   }
 }
