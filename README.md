@@ -8,7 +8,9 @@ In the results section of the app, stats across all quiz takers are shown.  Thes
   2) the correlation of pause count to quiz score
 
 
-## Available Scripts
+## After cloning the repo, to run the code:
+
+### `npm install`
 
 In the project directory, you can run:
 
