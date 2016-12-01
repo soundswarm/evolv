@@ -54,8 +54,7 @@ class Results extends Component {
 
         that.setState({playbackRateCorr: Stats.sampleCorrelation(scores, playbackRates)})
         that.setState({pauseCorr: Stats.sampleCorrelation(scores, pauseCounts)})
-
-        this.setState({numberOfQuizTakers:  Object.keys(data).length)
+        that.setState({numberOfQuizTakers:  Object.keys(data).length})
       });
     })         
   }
