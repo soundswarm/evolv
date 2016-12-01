@@ -95,7 +95,7 @@ class Quiz extends Component {
     this.answerKey = {
       q1: 1,
       q2: 2,
-      q3: 2,
+      q3: 0,
       q4: 0,
       q5: 2
     }
